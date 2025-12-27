@@ -1,0 +1,53 @@
+// KRDS Main Styles
+@import './tokens/krds_tokens.css';
+
+// Breakpoint mixins
+@mixin size-medium {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin size-large-more {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+// Utility mixins
+@mixin flex-layout($d: flex, $ai: stretch, $jc: flex-start) {
+  display: $d;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin underline() {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@mixin border-size-mode($mode) {
+  border-width: 0.1rem;
+}
+
+@mixin color-mode($mode: high-contrast) {
+  [data-theme='high-contrast'] & {
+    @content;
+  }
+}
+
+// Base styles
+:root {
+  font-family: 'Pretendard GOV', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 62.5%;
+  line-height: 1.5;
+}
+
+body {
+  font-size: 1.6rem;
+}

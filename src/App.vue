@@ -1,11 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import KrdsMasthead from './components/krds/Masthead.vue'
+import KrdsButton from './krds/components/KrdsButton/KrdsButton.vue'
+
+const handleClick = () => {
+  console.log('Button clicked')
+}
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <krds-masthead />
+  <krds-button variant="secondary" @click="handleClick" :loading="true">Button</krds-button>
 </template>
 
 <style scoped></style>
