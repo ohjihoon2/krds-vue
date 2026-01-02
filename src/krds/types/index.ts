@@ -148,3 +148,9 @@ export interface KrdsTooltipProps {
   position?: 'top' | 'bottom' | 'left' | 'right'
   trigger?: 'hover' | 'click'
 }
+
+export interface KrdsMastheadProps {
+  mode?: ThemeMode
+  text: string
+}
+
