@@ -15,9 +15,19 @@ export default defineConfig({
     !isStorybook && vueDevTools(),
     svgLoader(),
   ].filter(Boolean),
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @use "${fileURLToPath(new URL('./src/krds/styles/common/_variables_for_code.scss', import.meta.url))}" as *;
+          @use "${fileURLToPath(new URL('./src/krds/styles/common/_group_mixins.scss', import.meta.url))}" as *;
+        `,
+      },
+    },
+  },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
 })

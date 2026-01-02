@@ -1,5 +1,6 @@
 // KRDS Main Styles
-@import './tokens/krds_tokens.css';
+@use './tokens/krds_tokens.css';
+@use './common/common';
 
 // Breakpoint mixins
 @mixin size-medium {
@@ -43,7 +44,12 @@
 
 // Base styles
 :root {
-  font-family: 'Pretendard GOV', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family:
+    'Pretendard GOV',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
   font-size: 62.5%;
   line-height: 1.5;
 }
